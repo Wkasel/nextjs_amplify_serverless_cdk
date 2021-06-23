@@ -1,5 +1,0 @@
-{
-    "userpoolId":"cdk-blog-user-pool",
-    "AppSyncApiName":"cdk-blog-app",
-    "GraphQlSchemaPath":"./graphql/schema.graphql"
-}
