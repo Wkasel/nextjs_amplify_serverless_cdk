@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "scripts",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "strict": false,
+    "esModuleInterop": true,
+    "target": "es2015",
+    "module": "commonjs",
+    "rootDir": "./"
+  },
+  "include": ["scripts/deployer.ts"]
+}
