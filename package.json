@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "write-configs": "node ./write-config.js",
     "deploy": "ts-node --project tsconfig.scripts.json scripts/deployer.ts deploy",
     "serverless:up": "AWS_ACCESS_KEY_ID=AKIAXXDHSBSTDRHKB27A AWS_SECRET_ACCESS_KEY=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 DEPLOYMENT_BUCKET_NAME=amplify-cdktest-dev-201958-deployment yarn deploy ./serverless-test.yml",
     "local:sls": "AWS_ACCESS_KEY_ID=AKIAXXDHSBSTDRHKB27A AWS_SECRET_ACCESS_KEY=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 serverless"
