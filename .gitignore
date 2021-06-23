@@ -60,3 +60,10 @@ amplifytools.xcconfig
 
 .serverless
 .serverless_nextjs
+
+.next
+cdk.out/*
+
+lib/*.js
+test/*.js
+test/*.d.ts
