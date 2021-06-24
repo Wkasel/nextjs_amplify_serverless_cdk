@@ -6,11 +6,12 @@
 function main() {
   try {
     const myArgs = process.argv.slice(2);
-    const fs = require("fs");
+    console.log(myArgs);
+    // const fs = require("fs");
 
-    fs.writeFile("./cdk-exports-test.json", myArgs[0], function (e) {
-      console.log(e);
-    });
+    // fs.writeFile("./cdk-exports-test.json", myArgs[0], function (e) {
+    //   console.log(e);
+    // });
   } catch (e) {
     console.log(e);
   }

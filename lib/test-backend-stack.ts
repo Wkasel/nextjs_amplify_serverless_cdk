@@ -11,6 +11,7 @@ import * as lambda from '@aws-cdk/aws-lambda'
 
 
 export class TestBackendStack extends cdk.Stack {
+  public readonly exportData: any
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
 
@@ -131,36 +132,42 @@ export class TestBackendStack extends cdk.Stack {
 
 
     new cdk.CfnOutput(this, "GraphQLAPIURL", {
-      value: api.graphqlUrl
+      value: api.graphqlUrl,
+      exportName: "GraphQLAPIURL"
     })
 
     new cdk.CfnOutput(this, 'AppSyncAPIKey', {
-      value: api.apiKey || ''
+      value: api.apiKey || '',
+      exportName: "AppSyncAPIKey"
     })
 
     new cdk.CfnOutput(this, 'ProjectRegion', {
-      value: this.region
+      value: this.region,
+      exportName: "ProjectRegion"
     })
 
     new cdk.CfnOutput(this, "UserPoolId", {
-      value: userPool.userPoolId
+      value: userPool.userPoolId,
+      exportName: "UserPoolId"
     })
 
     new cdk.CfnOutput(this, "UserPoolClientId", {
-      value: userPoolClient.userPoolClientId
+      value: userPoolClient.userPoolClientId,
+      exportName: "UserPoolClientId"
     });
 
     // // write them to a config file
 
-    // const jsonData = {
-    //   "NextBackendStack": {
-    //     GraphQLAPIURL: api.graphqlUrl,
-    //     AppSyncAPIKey: api.apiKey || '',
-    //     ProjectRegion: this.region,
-    //     UserPoolId: userPool.userPoolId,
-    //     UserPoolClientId: userPoolClient.userPoolClientId
-    //   }
-    // }
+    this.exportData = {
+      "NextBackendStack": {
+        GraphQLAPIURL: api.graphqlUrl,
+        AppSyncAPIKey: api.apiKey || '',
+        ProjectRegion: this.region,
+        UserPoolId: userPool.userPoolId,
+        UserPoolClientId: userPoolClient.userPoolClientId
+      }
+    }
 
   }
 }
+
