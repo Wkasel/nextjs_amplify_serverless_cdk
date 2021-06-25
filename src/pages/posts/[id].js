@@ -12,9 +12,9 @@ export default function Post({ post }) {
   if (router.isFallback) return <div>Loading...</div>;
   return (
     <div>
-      <h2>{post.name}</h2>
+      <h2>{post.title}</h2>
       <p>{post.content}</p>
-      <span>By: {post.username}</span>
+      <span>By: {post.owner}</span>
       {user && <Comments postId={post.id} />}
     </div>
   );
